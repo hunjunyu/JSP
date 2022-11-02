@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>jsp</display-name>
+  <welcome-file-list>
+   
+    <welcome-file>index.jsp</welcome-file>
+   
+  </welcome-file-list>
+  
+  
+  
+  
+  <!--  서블릿파일 설정 -->
+  <!--  서버주소 -->
+  <servlet>
+      <servlet-name>HelloServlet</servlet-name>
+      <servlet-class>HelloServlet</servlet-class>
+  </servlet>
+  
+  <!--  클라이언트가 찾을수 있게 답변해주는 서블릿 -->
+  <servlet-mapping>
+     <servlet-name>HelloServlet</servlet-name>
+     <url-pattern>/HelloServlet</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
