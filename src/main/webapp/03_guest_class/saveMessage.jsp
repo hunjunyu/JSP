@@ -9,14 +9,16 @@
 	//0. 넘겨받는 데이타의 한글처리
 	request.setCharacterEncoding("utf-8");
 %>
-<jsp:useBean id="m" class="guest.model.Message">
-<jsp:setProperty name='m' property='*'/>
-</jsp:useBean>
+	<jsp:useBean id="m" class="guest.model.Message" > <%//메세지 자바 파일을 변수 m에 담는다 %>
+	<jsp:setProperty name='m' property='*'/> <%//m의 변수에 자바파일의 모든 값들을 담는다 %>
+	</jsp:useBean>
 
 <%
 	//1. 화면의 입력값을 Message 클래스로 전달
 	WriteMessageService service = WriteMessageService.getInstance();
+	//service에 WriteMessageService객체 생성하는 함수를 넣는다
     service.write(m);
+	//입력한 모든 값들을 db에 입력하여 저장하는 구문
 %>
     
     

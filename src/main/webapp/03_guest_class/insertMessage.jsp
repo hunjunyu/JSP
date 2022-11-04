@@ -12,14 +12,14 @@ $(function () {
 	
 	$('#submitbtn').click(function () {//메세지 남기기 버튼 클릭시 이벤트발생
 		
-		var id = $('input[name="guestName"]').val();
-		var pass = $('input[name="password"]').val();
-		var msg = $('textarea[name="message"]').val();
-		if(id =="" || pass==""||msg ==""){
+		var id = $('input[name="guestName"]').val();//아이디 값
+		var pass = $('input[name="password"]').val();//비밀번호 값
+		var msg = $('textarea[name="message"]').val();//메세지 내용 값
+		if(id =="" || pass==""||msg ==""){//id,비번,메세지 내용이 없으면 
 			    alert('입력해주세요');   
 			    return;
 		}
-		$('form[name="frm"]').submit();
+		$('form[name="frm"]').submit();//모든 내용을 전송
 	});
 	
 });

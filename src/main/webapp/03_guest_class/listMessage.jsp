@@ -4,12 +4,14 @@
 <%@ page import="java.util.List" %>
  
 <%
-
+	//
 	String pNum = request.getParameter("page");
 	// 전체 메세지 레코드 검색 
+	//ListMessageService의 객체생성하는 싱글톤 함수를 service변수에 넣는다
 	ListMessageService service =  ListMessageService.getInstance();
+	//db데이터의 모든 값들을 Message.java파일의 모든 값들을 넣고 mlist에 넣는다.
  	List<Message> mList = service.getMessageList(pNum);
- 	
+ 	//totalPageCount변수에 레코드 수에 따른 전체 페이지수를 담는다
  	int totalPageCount = service.getTotalPage();
  	
  	

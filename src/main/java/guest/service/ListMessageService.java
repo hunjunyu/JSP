@@ -40,7 +40,7 @@ public class ListMessageService {
 		int  startRow = countPerPage*pageNum-2;
 		int endRow = pageNum*countPerPage;
 		
-		// 전체 레코드를 검색해 온다면
+		// 전체 레코드를 검색해 오는 구문
 		List <Message> mList = MessageDao.getInstance().selectList(startRow,endRow);			
 		return mList;
 	}

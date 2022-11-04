@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%
 	String mid = request.getParameter("messageId");
+	//mid에 메세지
 %>
 <!DOCTYPE html>
 <html>

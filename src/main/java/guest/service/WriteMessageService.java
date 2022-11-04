@@ -6,10 +6,10 @@ import guest.model.MessageException;
 
 public class WriteMessageService {
 
-	private static WriteMessageService instance;
+	private static WriteMessageService instance;//instance 에 WriteMessageService를 담는다
 	
 	public static WriteMessageService	getInstance() throws MessageException
-	{
+	{//getInstance함수에 WriteMessageService를 생성하는 함수를 넣고 예외처리한다
 		if( instance == null )
 		{
 			instance = new WriteMessageService();
@@ -17,15 +17,12 @@ public class WriteMessageService {
 		return instance;
 	}
 	
-	private WriteMessageService()
-	{
-		
-	}
+	private WriteMessageService(){}//WriteMessageService의 기본 생성자 method생성을 위해 꼭 생성해야한다
 	
 	public void write( Message rec ) throws MessageException
-	{//model과 view를 이어주는 싱글톤 파일
-		MessageDao mDao = MessageDao.getInstance();
-		mDao.insert(rec);
+	{//message.java를 상속받는다
+		MessageDao mDao = MessageDao.getInstance();//MessageDao의 함수생성을 mDao에 넣는다
+		mDao.insert(rec);//Message의 입력한 값들을 mDao를 거쳐 db에 넣는구문
 	
 	}
 }
