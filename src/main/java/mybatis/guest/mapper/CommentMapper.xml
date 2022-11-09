@@ -3,9 +3,39 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
  
-<mapper namespace="CommnetMapper"> 
+<mapper namespace="CommentMapper"> 
 
- <select id="selectComment" parameterType="" resultType="mybatis.guest.model.Comment"> 
- select * from commnet_tab 
+ <select id="selectComment" resultType="Comment"> 
+ select * 
+ from comment_tab 
+ <!-- DB컬럼명과 VO의 변수명이 다르면 별칭처리 
+ 	  그렇지 않으려면, 설계시 DB컬럼과 VO 변수명을 동일하게 지정
+ -->
+ </select>
+ 
+ 
+ <select id="selectCommentByPK" parameterType="hashmap" resultType="Comment">
+ SELECT *
+ FROM comment_tab
+ WHERE comment_no=#{commentNo}
+ 
  </select> 
+ 
+ <insert id="insertComment" parameterType="Comment">
+INSERT INTO comment_tab
+VALUES(#{commentNo},#{userId},#{commentContent},sysdate)
+ </insert>
+ 
+ <delete id="deleteComment" parameterType="Comment">
+ DELETE FROM  comment_tab
+ WHERE 	comment_no=#{commentNo}
+ </delete>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 </mapper>

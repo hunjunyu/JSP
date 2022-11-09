@@ -15,5 +15,29 @@ public class CommentService {
 		return service;
 	}
 	
+	//모델단(JDBC) - DAO - Repository
+	private CommentRepository reps = new CommentRepository();
+	
+	public List<Comment> selectComment(){
+		return reps.selectComment();
+	}
 
+	public Comment selectCommentByPrimaryKey(int cId) {
+		return reps.selectCommentByPK(cId);
+	}
+	
+	public void insertComment(Comment c) {
+		reps.insertComment(c);
+	}
+		
+	public void deleteComment(int cId) {
+		reps.deleteComment(cId);
+	}
+	
+	
+	
+	
+	
+	
+	
 }

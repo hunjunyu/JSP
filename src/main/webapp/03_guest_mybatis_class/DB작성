@@ -1,0 +1,7 @@
+
+테이블명 : comment_tab
+
+comment_ no number PK 글번호
+user_id varchar2(30) 작성자 
+comment_content varchar2(1024) 내용
+reg_Dat  date  작성일

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id='customer' class="exercise.order.domain.Customer">
+   <property name="id" value='1'/>
+	<property name="name" value='홍길동'/>
+	<property name="address" value='서울시'/>
+	<property name="email" value='kosta@kosta.co.kr'/>
+</bean>
+
+<!-- 
+	##### 2. 여기에 빈 생성을 추가하거나 컴포넌트 스캔 방식 
+ -->
+
+</beans>

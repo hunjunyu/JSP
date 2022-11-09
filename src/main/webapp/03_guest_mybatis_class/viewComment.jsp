@@ -5,15 +5,32 @@
       
   <!-- 키에 해당하는 글번호를 넘겨받아 서비스의 메소드 호출  -->
   <% 
-  long commentNo = Integer.parseInt( request.getParameter("cId"));
+  int commentNo = Integer.parseInt( request.getParameter("cId"));
   Comment comment = CommentService.getInstance().selectCommentByPrimaryKey(commentNo);
-  %>
-     
+  
+  %> 
+      
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="UTF-8">
 <title> 메세지 보기 </title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	
+	$('#btnDelete').click(function () {
+		window.location = "deletel.jsp?cId=<%=  comment.getCommentNo()%>";
+		 
+	});
+	$('#btnModify').clcik(function () {
+		window.location = "mod.jsp?cId=<%=  comment.getCommentNo()%>";
+	});
+	
+	
+});
+</script>
+
 </head>
 <body>
 <table border="1">
